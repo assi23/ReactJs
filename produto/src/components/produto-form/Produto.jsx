@@ -23,12 +23,7 @@ class Produto extends Component {
     return (
       <section>
         <form onSubmit={this.handlerSave.bind(this)}>
-          <label>Id:</label>
-          <input
-            type="number"
-            readOnly
-            value={this.id}
-          />
+          <label>Id:{this.id}</label>
           <br />
 
           <label>Nome:</label>
@@ -40,8 +35,10 @@ class Produto extends Component {
           <br />
 
           <label>Categoria:</label>
-          <select onClickCapture={this.handlerInputCategory.bind(this)}>
-            <option value="" disabled selected>Selecione a Categoria</option>
+          <select
+          defaultValue = "default"
+           onClickCapture={this.handlerInputCategory.bind(this)}>
+            <option value="default" disabled >Selecione a Categoria</option>
             {this.props.listCat.map((c, i) => (
               <option key={i} value={c}>
                 {c}
